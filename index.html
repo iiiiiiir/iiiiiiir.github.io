@@ -15,6 +15,7 @@
             align-items: center;
             font-family: Arial, sans-serif;
             background-color: #fff;
+            transition: background-color 2s;
         }
 
         .container {
@@ -29,6 +30,7 @@
 
         #main-content {
             display: none;
+            opacity: 0;
         }
 
         #text-input {
@@ -70,7 +72,7 @@
                     document.getElementById("loading-container").style.display = 'none';
                     document.getElementById("main-content").style.display = 'block';
                     document.getElementById("main-content").style.opacity = '1';
-                    document.getElementById("main-content").style.transform = 'scale(1)';
+                    document.body.style.backgroundColor = '#f0f0f0';
                 }, 2000); // 2 seconds to finish the first animation
             }, 2000); // 2 seconds delay before starting the animation
         });
@@ -82,4 +84,3 @@
     </script>
 </body>
 </html>
-
