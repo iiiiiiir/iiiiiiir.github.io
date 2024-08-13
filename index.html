@@ -1,4 +1,38 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Page</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        #loading-message {
+            font-size: 2em;
+            color: #333;
+        }
+    </style>
+    <script>
+        // JavaScript to redirect after 2 seconds
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(function() {
+                window.location.href = "main.html";
+            }, 2000); // 2000 milliseconds = 2 seconds
+        });
+    </script>
+</head>
+<body>
+    <div id="loading-message">Loading, please wait...</div>
+</body>
+</html>
+
 <html>
     <head>
         <title>Pitch your problem</title>
