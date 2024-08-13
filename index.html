@@ -3,32 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loading Page</title>
+    <title>Company Page</title>
     <style>
-        body {
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            background-color: #f0f0f0;
-            margin: 0;
             font-family: Arial, sans-serif;
+            background-color: #fff;
         }
+
+        .container {
+            text-align: center;
+            transition: opacity 2s, transform 2s;
+        }
+
         #loading-message {
             font-size: 2em;
             color: #333;
         }
+
+        #main-content {
+            display: none;
+        }
+
+        #text-input {
+            padding: 0.5em;
+            font-size: 1em;
+            margin-bottom: 1em;
+            width: 80%;
+        }
+
+        #submit-button {
+            padding: 0.5em 1em;
+            font-size: 1em;
+            cursor: pointer;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
     </style>
-    <script>
-        // JavaScript to redirect after 2 seconds
-        document.addEventListener("DOMContentLoaded", function() {
-            setTimeout(function() {
-                window.location.href = "main.html";
-            }, 2000); // 2000 milliseconds = 2 seconds
-        });
-    </script>
 </head>
 <body>
-    <div id="loading-message">Loading, please wait...</div>
+    <div class="container" id="loading-container">
+        <div id="loading-message">Company Title</div>
+    </div>
+
+    <div class="container" id="main-content">
+        <input type="text" id="text-input" placeholder="Enter your text here">
+        <br>
+        <button id="submit-button">Submit</button>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(function() {
+                document.getElementById("loading-container").style.opacity = '0';
+                document.getElementById("loading-container").style.transform = 'scale(0.5)';
+                
+                setTimeout(function() {
+                    document.getElementById("loading-container").style.display = 'none';
+                    document.getElementById("main-content").style.display = 'block';
+                    document.getElementById("main-content").style.opacity = '1';
+                    document.getElementById("main-content").style.transform = 'scale(1)';
+                }, 2000); // 2 seconds to finish the first animation
+            }, 2000); // 2 seconds delay before starting the animation
+        });
+
+        document.getElementById("submit-button").addEventListener("click", function() {
+            const userInput = document.getElementById("text-input").value;
+            alert("Text Submitted: " + userInput);
+        });
+    </script>
 </body>
 </html>
+
