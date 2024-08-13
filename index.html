@@ -53,11 +53,11 @@
 </head>
 <body>
     <div class="container" id="loading-container">
-        <div id="loading-message">Company Title</div>
+        <div id="loading-message">Let It Out</div>
     </div>
 
     <div class="container" id="main-content">
-        <input type="text" id="text-input" placeholder="Enter your text here">
+        <input type="text" id="text-input" placeholder="Pitch Your Problem">
         <br>
         <button id="submit-button">Submit</button>
     </div>
@@ -73,8 +73,8 @@
                     document.getElementById("main-content").style.display = 'block';
                     document.getElementById("main-content").style.opacity = '1';
                     document.body.style.backgroundColor = '#f0f0f0';
-                }, 2000); // 2 seconds to finish the first animation
-            }, 2000); // 2 seconds delay before starting the animation
+                }, 500); // 2 seconds to finish the first animation
+            }, 500); // 2 seconds delay before starting the animation
         });
 
         document.getElementById("submit-button").addEventListener("click", function() {
