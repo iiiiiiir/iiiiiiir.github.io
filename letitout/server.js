@@ -1,22 +1,23 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const cors = require('cors');
-
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 // Middleware
-app.use(bodyParser.json());
-app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(cors()); // Enable CORS for all routes
 
-// Example route to handle data submission
 app.post('/submit-data', (req, res) => {
-    const data = req.body;
-    console.log(data);
-    res.send('Data received');
+    const data = req.body.data;
+    if (data) {
+        // Save data (e.g., to a file or database)
+        res.send('Data received and saved');
+    } else {
+        res.status(400).send('No data provided');
+    }
 });
 
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 });
-
