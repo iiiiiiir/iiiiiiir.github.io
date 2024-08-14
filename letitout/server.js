@@ -7,6 +7,10 @@ const port = process.env.PORT || 3000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors()); // Enable CORS for all routes
+app.use(cors({
+    origin: 'https://iiiiiiir.github.io' // GitHub Pages URL
+}));
+
 
 app.post('/submit-data', (req, res) => {
     const data = req.body.data;
