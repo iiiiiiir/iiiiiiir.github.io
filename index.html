@@ -24,7 +24,7 @@
         }
 
         #loading-message {
-            font-size: 2em;
+            font-size: 4em;
             color: #333;
         }
 
@@ -57,9 +57,9 @@
     </div>
 
     <div class="container" id="main-content">
-        <input type="text" id="text-input" placeholder="Pitch Your Problem">
+        <input type="text" id="text-input" placeholder="you Speak">
         <br>
-        <button id="submit-button">Submit</button>
+        <button id="submit-button">we Listen</button>
     </div>
 
     <script>
@@ -73,7 +73,7 @@
                     document.getElementById("main-content").style.display = 'block';
                     document.getElementById("main-content").style.opacity = '1';
                     document.body.style.backgroundColor = '#f0f0f0';
-                }, 100); // 2 seconds to finish the first animation
+                }, 250); // 2 seconds to finish the first animation
             }, 500); // 2 seconds delay before starting the animation
         });
 
